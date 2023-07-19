@@ -62,7 +62,20 @@ class MountsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: mainColor),
+        title: Center(
+          child: Icon(
+            Icons.terrain,
+            size: 40,
+          ),
+        ),
+        actions: [
+          SizedBox(width: 40, height: 40,)
+        ],
+      ),
       drawer: Drawer(),
       body: Center(
         child: Text('Welcome to Mounts of the World!'),
