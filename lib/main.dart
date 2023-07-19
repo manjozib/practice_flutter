@@ -95,7 +95,8 @@ class MountsApp extends StatelessWidget {
           AppSearch(),
           Expanded(
               child: AppMountListView()
-          )
+          ),
+          AppCategoryList()
         ],
       ),
     );
@@ -266,6 +267,83 @@ class AppMountListView extends StatelessWidget {
   }
 }
 
+class AppCategoryList extends StatelessWidget {
+  const AppCategoryList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                    'Category',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black
+                  ),
+                ),
+                Text(
+                    'See More',
+                  style: TextStyle(
+                    color: mainColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            height: 100,
+            margin: EdgeInsets.only(left: 10),
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: categories.length,
+              itemBuilder: (context, index) {
+
+              CategoryModel currentCategory = categories[index];
+              return Container(
+                width: 100,
+                margin: EdgeInsets.only(top: 10, right: 10),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.grey.withOpacity(0.2),
+                  ),
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      currentCategory.icon,
+                      color: mainColor,
+                    ),
+                    Text(
+                      currentCategory.category,
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold
+                      ),
+                    )
+                  ],
+                ),
+              );
+                }
+            ),
+          )
+        ],
+      )
+    );
+  }
+}
+
+
 
 
 
@@ -282,6 +360,16 @@ class MountModel {
     this.name = '',
     this.location = '',
     this.description = ''
+});
+}
+
+class CategoryModel {
+  String category;
+  IconData? icon;
+
+  CategoryModel({
+    this.category = '',
+    this.icon
 });
 }
 
@@ -322,4 +410,11 @@ final List<MountModel> mountItems = [
       description:
       'Popocatépetl is an active stratovolcano located in the states of Puebla, Morelos, and Mexico in central Mexico. It lies in the eastern half of the Trans-Mexican volcanic belt. At 5,426 m it is the second highest peak in Mexico, after Citlaltépetl at 5,636 m.',
       location: 'Mexico')
+];
+
+final List<CategoryModel> categories = [
+  CategoryModel(category: 'Mountain', icon: Icons.terrain),
+  CategoryModel(category: 'Forest', icon: Icons.park),
+  CategoryModel(category: 'Beach', icon: Icons.beach_access),
+  CategoryModel(category: 'Hiking', icon: Icons.directions_walk)
 ];
