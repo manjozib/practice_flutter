@@ -76,7 +76,18 @@ class MountsApp extends StatelessWidget {
           SizedBox(width: 40, height: 40,)
         ],
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: Container(
+          padding: EdgeInsets.all(30),
+          color: mainColor,
+          alignment: Alignment.bottomLeft,
+          child: Icon(
+            Icons.terrain,
+            color: Colors.white,
+            size: 80,
+          ),
+        ),
+      ),
       body: Center(
         child: Text('Welcome to Mounts of the World!'),
       ),
