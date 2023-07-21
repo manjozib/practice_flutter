@@ -207,25 +207,35 @@ class  DetailsPage extends StatelessWidget {
           Expanded(
               child: Column(
                 children: [
-                  DetailsRatingBar()
-                  // Container(
-                  //   child: Row(
-                  //     children: [
-                  //       Container(
-                  //         child: Column(
-                  //           children: [
-                  //             Text(
-                  //               'Rating'
-                  //             ),
-                  //             Text(
-                  //                 '4.6'
-                  //             )
-                  //           ],
-                  //         ),
-                  //       )
-                  //     ],
-                  //   ),
-                  // )
+                  DetailsRatingBar(),
+                  Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                            child: Text(
+                              'About ${selectedItem.name}',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                            child: Text(
+                              '${selectedItem.description}',
+                              style: TextStyle(
+                                fontSize: 12
+                              ),
+                            ),
+                          )
+                        ],
+                      )
+                  )
                 ],
               )
           )
