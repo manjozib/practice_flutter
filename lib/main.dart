@@ -7,7 +7,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DetailsPage() //SplashPage()
+      home: SplashPage()
     )
   );
 }
@@ -105,12 +105,13 @@ class MountsApp extends StatelessWidget {
 
 //Details page
 class  DetailsPage extends StatelessWidget {
-  const  DetailsPage({Key? key}) : super(key: key);
+  MountModel mount;
+  DetailsPage({super.key, required this.mount});
 
   @override
   Widget build(BuildContext context) {
 
-    var selectedItem = mountItems[0];
+    var selectedItem = mount;
 
     return Scaffold(
       body: Column(
@@ -375,38 +376,45 @@ class AppMountListView extends StatelessWidget {
         itemBuilder: (context, index) {
 
           MountModel currentMount = mountItems[index];
-          return Container(
-            alignment: Alignment.bottomLeft,
-            padding: EdgeInsets.all(20),
-            margin: EdgeInsets.all(10),
-            width: 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(
-                image: AssetImage(currentMount.path),
-                fit: BoxFit.cover
-              )
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Text(
-                    currentMount.name,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
+          return GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => DetailsPage(mount: currentMount))
+              );
+            },
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(10),
+              width: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                  image: AssetImage(currentMount.path),
+                  fit: BoxFit.cover
+                )
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Text(
+                      currentMount.name,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  currentMount.location,
-                  style: TextStyle(
-                    color: Colors.white
-                  ),
-                )
-              ],
+                  Text(
+                    currentMount.location,
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  )
+                ],
+              ),
             ),
           );
         }
