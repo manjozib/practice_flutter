@@ -738,35 +738,29 @@ class AppBottomBarItem {
 //DATA
 final List<MountModel> mountItems = [
   MountModel(
-      path: 'assets/images/semeru.jpeg',
-       name: 'Mount Semeru',
+      path: 'assets/images/nyangani.jpg',
+      name: 'Mount Nyangani',
       description:
-      'Semeru, or Mount Semeru, is an active volcano in East Java, Indonesia. It is located in the subduction zone, where the Indo-Australia plate subducts under the Eurasia plate. It is the highest mountain on the island of Java.',
-      location: 'East Java'),
+      'Mount Nyangani (formerly Mount Inyangani) is the highest mountain in Zimbabwe at 2,592 metres. The mountain, which is located within Nyanga National Park in Nyanga District, is about 110 km north-west of Mutare. The summit lies atop a small outcrop of rock around 40m above the surrounding area',
+      location: 'Mutare'),
   MountModel(
-      path:'assets/images/merbaru.jpeg',
-      name: 'Mount Merbaru',
+      path:'assets/images/guruguru.jpg',
+      name: 'Mount Guruguru',
       description:
-      'Mount Merbabu is a dormant stratovolcano in Central Java province on the Indonesian island of Java. The name Merbabu could be loosely translated as Mountain of Ash from the Javanese combined words; Meru means mountain and awu or abu means ash.',
-      location: 'Central Java'),
+      'Guruguru Mountain is a solid dome-shaped volcanic rock in Shurugwi, Zimbabwe, near Pakame Mission. Guruguru, its Shona name, and Nkulunkulu, its Ndebele name, both mean "the biggest". It is by far the highest mountain in the Shurugwi Rural Areas and the Midlands Province of Zimbabwe',
+      location: 'Shurugwi'),
   MountModel(
-      path: 'assets/images/loa.jpeg',
-      name: 'Mauna Loa',
+      path: 'assets/images/ngomakurira.jpg',
+      name: 'Mount Ngomakurira',
       description:
-      'Mauna Loa is one of five volcanoes that form the Island of Hawaii in the U.S. state of Hawai in the Pacific Ocean. The largest subaerial volcano in both mass and volume, Mauna Loa has historically been considered the largest volcano on Earth, dwarfed only by Tamu Massif.',
-      location: 'Hawaii'),
+      'Ngomakurira is known to many Harare residents as an area of intense beauty and great spiritual significance. Many of the hilltops and woodland areas have stone altars that are used by the Zionist churches as places of worship. Only thirty ....',
+      location: 'Harare'),
   MountModel(
-      path:'assets/images/vesuvius.jpeg',
-      name: 'Mount Vesuvius',
+      path:'assets/images/chimanimani.jpg',
+      name: 'Chimanimani mountains',
       description:
-      'Mount Vesuvius is a somma-stratovolcano located on the Gulf of Naples in Campania, Italy, about 9 km east of Naples and a short distance from the shore. It is one of several volcanoes which form the Campanian volcanic arc.',
-      location: 'Italy'),
-  MountModel(
-      path: 'assets/images/popocatépetl.jpeg',
-      name: 'Mount Popocatépetl',
-      description:
-      'Popocatépetl is an active stratovolcano located in the states of Puebla, Morelos, and Mexico in central Mexico. It lies in the eastern half of the Trans-Mexican volcanic belt. At 5,426 m it is the second highest peak in Mexico, after Citlaltépetl at 5,636 m.',
-      location: 'Mexico')
+      'The Chimanimani Mountains are a mountain range on the border of Zimbabwe and Mozambique. The mountains are in the southern portion of the Eastern Highlands, or Manica Highlands, a belt of highlands that extend north and south along the international border, between the Zambezi and Save rivers',
+      location: 'Chimanimani')
 ];
 
 final List<CategoryModel> categories = [
