@@ -88,3 +88,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: PersonalPortfolioIcons
+      fonts:
+        - asset: assets/fonts/PersonalPortfolioIcons.ttf
+    - family: Product Sans
+      fonts:
+        - asset: assets/fonts/Product Sans Regular.ttf
+        - asset: assets/fonts/Product Sans Bold.ttf
+          weight: 900
+        - asset: assets/fonts/Product Sans Italic.ttf
+          style: italic
