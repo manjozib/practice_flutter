@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_flutter/features/splash/presentation/pages/splash_page.dart';
 
 void main() {
   runApp(const PortfolioApp());
@@ -16,7 +17,7 @@ class PortfolioApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Product Sans',
         ),
-        home: const SizedBox.shrink()
+        home: SplashPage(),
     );
   }
 }
